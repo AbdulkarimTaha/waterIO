@@ -28,15 +28,28 @@ class _StartPageState extends State<StartPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.blue ,
-      body:  Center(
-        child: Image(
-          image: AssetImage("assets/image/truck2.jpg" ),
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
-          alignment: Alignment.center,
+    return Scaffold(
+      body: Center(
+        child: Stack(
+          children: const [
+            Image(
+              image: AssetImage("assets/image/truck2.jpg"),
+              fit: BoxFit.fill,
+              height: double.infinity,
+              width: double.infinity,
+              alignment: Alignment.center,
+            ),
+            Center(
+              child: Text(
+                "Water iO",
+                style: TextStyle(
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold ,
+                  color: Colors.white
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
