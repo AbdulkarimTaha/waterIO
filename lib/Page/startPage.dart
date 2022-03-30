@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class StartPage extends StatefulWidget {
@@ -13,7 +14,9 @@ class StartPage extends StatefulWidget {
 class _StartPageState extends State<StartPage> {
   void timeNav() async {
     Timer(const Duration(seconds: 3), () {
-      print("object");
+      if (kDebugMode) {
+        print("object");
+      }
     });
   }
 
@@ -25,9 +28,17 @@ class _StartPageState extends State<StartPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.red ,
-      body: Container(),
+    return const Scaffold(
+      backgroundColor: Colors.blue ,
+      body:  Center(
+        child: Image(
+          image: AssetImage("assets/image/truck2.jpg" ),
+          fit: BoxFit.cover,
+          height: double.infinity,
+          width: double.infinity,
+          alignment: Alignment.center,
+        ),
+      ),
     );
   }
 }
